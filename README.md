@@ -18,7 +18,7 @@ This is the Repo/Code for the infrastructure required to run the [Dream Renewabl
 - [Heroku](https://www.heroku.com/about)
 - [AWS](https://aws.amazon.com/)
 
-- Terraform requires state locking which for larger projects requires a DB to manage to ensure there is not overwriting. As this is run by only a few devs this unnecessary and can be managed with good communication i.e not making changes to the terraform at the same time.
+Terraform requires state locking which for larger projects requires a DB to manage to ensure there is not overwriting. As this is run by only a few devs this unnecessary and can be managed with good communication i.e not making changes to the terraform at the same time.
 
 ## Setup
 
