@@ -54,4 +54,4 @@ To run the application you must ensure you've followed the setup steps
 | Name                                                                                | Description                                            |
 | :---------------------------------------------------------------------------------- | :----------------------------------------------------- |
 | [Dream Renewables Cms](https://github.com/OAMPC/DreamRenewablesCms)                 | The Content Management System for this web application |
-| [Dream Renewables Frontend](https://github.com/OAMPC/DreamRenewablesInfrastructure) | React code for this web application                    |
+| [Dream Renewables Frontend](https://github.com/OAMPC/DreamRenewablesFrontend)       | React code for this web application                    |
