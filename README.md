@@ -27,11 +27,22 @@ Terraform requires state locking which for larger projects requires a DB to mana
 This project requires the following pre-requisites:
 
 1. [Terraform](https://www.terraform.io/)
+2. [NodeJs](https://nodejs.org/en)
 
 - In order to locally make changes to Heroku you'll need to authorize with Heroku. When logged in as the Heroku admin the following command will show you a already made authorization token
   - `heroku authorizations` - will show authorizations, there should be one called `terraform-dream-renewables-website`
   - `heroku authorizations:info <ID>` - will show data on a specified authorization
   - `export HEROKU_API_KEY=<TOKEN> HEROKU_EMAIL=<EMAIL>` - This will set the keys in order for you to make usual terraform commands
+
+#### Installing project dependencies
+
+This project uses [Husky](https://typicode.github.io/husky/) and [lint-staged](https://www.npmjs.com/package/lint-staged/v/12.3.2) to enforce consistent formatting of Terraform files using `terraform fmt` before committing changes.
+
+1. In the root directory Install dependencies: `npm i`
+2. Now run the following to initialise husky git hooks: `npm run prepare`
+3. The pre-commit file _.husky/pre-commit_ should contain the following line only: `npx lint-staged`
+   - The subfolder _.husky/_\_ is required and should not be committed by default
+4. Ensure the pre-commit file is executable: `chmod +x .husky/pre-commit`
 
 ## Usage
 
@@ -51,7 +62,7 @@ To run the application you must ensure you've followed the setup steps
 
 ### Related Repositories
 
-| Name                                                                                | Description                                            |
-| :---------------------------------------------------------------------------------- | :----------------------------------------------------- |
-| [Dream Renewables Cms](https://github.com/OAMPC/DreamRenewablesCms)                 | The Content Management System for this web application |
-| [Dream Renewables Frontend](https://github.com/OAMPC/DreamRenewablesFrontend)       | React code for this web application                    |
+| Name                                                                          | Description                                            |
+| :---------------------------------------------------------------------------- | :----------------------------------------------------- |
+| [Dream Renewables Cms](https://github.com/OAMPC/DreamRenewablesCms)           | The Content Management System for this web application |
+| [Dream Renewables Frontend](https://github.com/OAMPC/DreamRenewablesFrontend) | React code for this web application                    |
