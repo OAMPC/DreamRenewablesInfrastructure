@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.9"
+  },
+  "scripts": {
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.tf": [
+      "terraform fmt -recursive"
+    ]
+  }
+}
