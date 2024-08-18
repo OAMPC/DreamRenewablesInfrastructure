@@ -6,6 +6,7 @@ resource "heroku_app" "dream_renewables_strapi" {
 resource "heroku_config" "strapi_service_config" {
   vars = {
     AWS_REGION = "eu-west-2"
+    AWS_BUCKET = aws_s3_bucket.strapi_dr_s3_media_bucket.bucket
   }
   sensitive_vars = {
     AWS_ACCESS_KEY_ID     = aws_iam_access_key.strapi_service_access_key.id
