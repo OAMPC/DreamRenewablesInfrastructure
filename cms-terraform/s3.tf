@@ -37,7 +37,7 @@ resource "aws_s3_bucket_cors_configuration" "strapi_dr_s3_media_bucket_cors" {
 
   cors_rule {
     allowed_headers = ["*"]
-    allowed_methods = ["GET"]
+    allowed_methods = ["GET", "POST", "PUT", "DELETE"]
     allowed_origins = ["*"]
     expose_headers  = []
     max_age_seconds = 3000

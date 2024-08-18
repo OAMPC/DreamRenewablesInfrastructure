@@ -8,9 +8,12 @@ resource "aws_iam_access_key" "strapi_service_access_key" {
 
 data "aws_iam_policy_document" "strapi_service_policy" {
   statement {
-    effect    = "Allow"
-    actions   = ["s3:PutObject", "s3:GetObject", "s3:DeleteObject"]
-    resources = ["*"]
+    effect  = "Allow"
+    actions = ["s3:PutObject", "s3:GetObject", "s3:DeleteObject", "s3:ListBucket"]
+    resources = [
+      "${aws_s3_bucket.strapi_dr_s3_media_bucket.arn}",
+      "${aws_s3_bucket.strapi_dr_s3_media_bucket.arn}/*"
+    ]
   }
 }
 
