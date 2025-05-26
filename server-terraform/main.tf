@@ -4,10 +4,14 @@ terraform {
       source  = "heroku/heroku"
       version = "~> 5.0"
     }
+
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
   }
 }
 
-resource "heroku_app" "dream_renewables_server" {
-  name   = var.heroku_server_app_name
-  region = "eu"
+provider "aws" {
+  region = "eu-west-2"
 }
