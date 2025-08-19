@@ -3,6 +3,13 @@ resource "heroku_app" "dream_renewables_strapi" {
   region = "eu"
 }
 
+resource "heroku_formation" "cms_web" {
+  app_id   = heroku_app.dream_renewables_strapi.id
+  type     = "web"
+  quantity = 1
+  size     = "basic"
+}
+
 resource "heroku_config" "strapi_service_config" {
   vars = {
     AWS_REGION = "eu-west-2"
